@@ -12,7 +12,7 @@ import { FaPause, FaPlay } from "react-icons/fa";
 import bgvideo from '../video/intro2.mp4'
 export default function EntrancePage() {
     const videoRef = useRef<HTMLVideoElement | null>(null);
-    const [muted, setMuted] = useState<boolean>(true);
+    // const [muted, setMuted] = useState<boolean>(true);
     const [paused, setPaused] = useState<boolean>(false);
 
     // Text Lines
@@ -88,7 +88,8 @@ export default function EntrancePage() {
                     ref={videoRef}
                     src={bgvideo}
                     autoPlay
-                    muted={muted}
+                    // muted={muted}
+                    muted
                     loop
                     playsInline
                     className="w-full h-full object-cover"
