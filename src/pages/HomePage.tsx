@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 
 interface Project {
   title: string;
@@ -33,15 +35,15 @@ const projects: Project[] = [
     link: "/stopwatch",
   },
   {
-  title: "Weather App",
-  description: [
-    "Weather forecasting application built using React and TypeScript.",
-    "Fetches real-time weather data from external APIs with error handling.",
-    "Displays temperature, humidity, and weather conditions in a user-friendly layout.",
-    "Styled with Tailwind CSS and Glassmorphism UI for a modern visual experience."
-  ],
-  link: "/weather",
-},
+    title: "Weather App",
+    description: [
+      "Weather forecasting application built using React and TypeScript.",
+      "Fetches real-time weather data from external APIs with error handling.",
+      "Displays temperature, humidity, and weather conditions in a user-friendly layout.",
+      "Styled with Tailwind CSS and Glassmorphism UI for a modern visual experience."
+    ],
+    link: "/weather",
+  },
 
   {
     title: "Dashboard",
@@ -83,12 +85,12 @@ export default function HomePage() {
               </ul>
 
 
-              <a
-                href={project.link}
+              <Link
+                to={project.link}
                 className="inline-block mt-3 w-full text-center text-sm font-medium text-black bg-white/95 rounded-lg px-4 py-2 hover:bg-gray-200"
               >
                 Explore
-              </a>
+              </Link>
             </div>
           ))}
         </div>
