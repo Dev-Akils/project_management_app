@@ -8,6 +8,7 @@ import GoBackButton from './components/GoBackButton'
 import LeftSideNavbar from './components/LeftSideNavbar';
 import EntrancePage from './pages/EntrancePage'
 import Stopwatch from './pages/StopWatch'
+import NotFoundPage from './pages/NoFoundPage'
 
 function App() {
 
@@ -32,6 +33,8 @@ const showLeftNav=leftNav.includes(location.pathname)
       <Route path="/projects" element={<HomePage/>}/>
       <Route path="/todo" element={  <ToDoPage />}/>
       <Route path="/stopwatch" element={<Stopwatch/>}/>
+
+      <Route path="*" element={<NotFoundPage/>}/>
     </Routes>
    
     
