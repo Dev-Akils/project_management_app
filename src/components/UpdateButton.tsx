@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { updateTodo } from "../todoSlice";
+import { updateTodo } from "../redux/Features/todoSlice";
 
 
 export default function UpdateButton({ id }: { id: number }) {

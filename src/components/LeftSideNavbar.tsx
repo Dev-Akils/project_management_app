@@ -1,8 +1,17 @@
 import { Link, useLocation } from "react-router-dom";
-import { PiMapPinLight } from "react-icons/pi";
-import { BsFront, BsPentagon } from "react-icons/bs";
-import { RiShiningLine } from "react-icons/ri";
-import { TbBuildingSkyscraper } from "react-icons/tb";
+// import { PiMapPinLight } from "react-icons/pi";
+import {
+  // BsFront,
+  BsPentagon
+} from "react-icons/bs";
+// import { RiShiningLine } from "react-icons/ri";
+// import { TbBuildingSkyscraper } from "react-icons/tb";
+import { BsStopwatch } from "react-icons/bs";
+import { MdDashboardCustomize } from "react-icons/md";
+
+import { TiWeatherPartlySunny } from "react-icons/ti";
+
+import { LuListTodo } from "react-icons/lu";
 
 type NavItemProps = {
   item: {
@@ -18,10 +27,10 @@ export default function Navbar() {
 
   const data = [
     { id: 1, name: "Intro", path: "/", icon: <BsPentagon /> },
-    { id: 2, name: "Todo", path: "/location", icon: <PiMapPinLight /> },
-    { id: 3, name: "Stopwatch", path: "/amenities", icon: <RiShiningLine /> },
-    { id: 4, name: "Weather", path: "/masterplan", icon: <TbBuildingSkyscraper /> },
-    { id: 5, name: "", path: "/inventory", icon: <BsFront /> },
+    { id: 2, name: "Todo", path: "/todo", icon: <LuListTodo /> },
+    { id: 3, name: "Stopwatch", path: "/stopwatch", icon: <BsStopwatch /> },
+    { id: 4, name: "Weather", path: "/weather_app", icon: <TiWeatherPartlySunny /> },
+    { id: 5, name: "Dashboard", path: "/dashboard", icon: <MdDashboardCustomize /> },
   ];
   const isHome = location.pathname === "/";
 

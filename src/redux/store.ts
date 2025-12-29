@@ -1,9 +1,11 @@
 import {configureStore} from "@reduxjs/toolkit";
-import todoReducer from './todoSlice';
+import todoReducer from './Features/todoSlice';
+import stopWatchReducer from "./Features/stopwatchSlice";
 
 export const store=configureStore({
     reducer:{
         todo: todoReducer,
+        stopwatch:stopWatchReducer,
     },
 });
 

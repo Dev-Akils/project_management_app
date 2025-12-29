@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 
-import { addTodo } from "../todoSlice";
+import { addTodo } from "../redux/Features/todoSlice";
 
 export default function AddButton({text, setText}: {text: string; setText: (text: string) => void}) {
      

@@ -7,16 +7,17 @@ import HomePage from './pages/HomePage'
 import GoBackButton from './components/GoBackButton'
 import LeftSideNavbar from './components/LeftSideNavbar';
 import EntrancePage from './pages/EntrancePage'
+import Stopwatch from './pages/StopWatch'
 
 function App() {
 
 const location=useLocation();
 
-const backbutton=["/todo"];
+const backbutton=["/todo","/stopwatch"];
 const showBack=backbutton.includes(location.pathname)
 
 
-const leftNav=["/todo","/projects"];
+const leftNav=["/todo","/projects","/stopwatch"];
 const showLeftNav=leftNav.includes(location.pathname)
 
   return (
@@ -30,6 +31,7 @@ const showLeftNav=leftNav.includes(location.pathname)
       <Route path="/" element={<EntrancePage/>}/>
       <Route path="/projects" element={<HomePage/>}/>
       <Route path="/todo" element={  <ToDoPage />}/>
+      <Route path="/stopwatch" element={<Stopwatch/>}/>
     </Routes>
    
     

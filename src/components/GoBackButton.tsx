@@ -6,7 +6,7 @@ export default function GoBackButton() {
     const navigate = useNavigate();
     return (<>
         {/* Glass Back Button */}
-        <div className="absolute bottom-10 right-14 z-30 pointer-events-auto">
+        <div className="absolute bottom-[85%] right-[80%] md:bottom-10 md:right-14 lg:bottom-10 lg:right-14 z-30 pointer-events-auto">
             <button
                 onClick={() => navigate(-1)}
                 className="

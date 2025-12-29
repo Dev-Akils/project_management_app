@@ -1,54 +1,57 @@
 import {
-    //  useRef,
-     useState, useEffect } from "react";
+    useRef,
+    useState, useEffect
+} from "react";
 import { Link } from "react-router-dom";
 // import video from "../video/Dosti_Walkthrough_Trim (1).mp4";
 // import hero from '../assets/hero.jpeg'
 // import { HiVolumeUp, HiVolumeOff } from "react-icons/hi";
-// import { FaPause, FaPlay } from "react-icons/fa";
+import { HiRefresh } from "react-icons/hi";
+import { FaPause, FaPlay } from "react-icons/fa";
 // import logo from '../assets/Gallery/Logofinal.png'
-
+import bgvideo from '../video/intro2.mp4'
 export default function EntrancePage() {
-//     const videoRef = useRef<HTMLVideoElement | null>(null);
-// const [muted, setMuted] = useState<boolean>(true);
-// const [paused, setPaused] = useState<boolean>(false);
+    const videoRef = useRef<HTMLVideoElement | null>(null);
+    const [muted, setMuted] = useState<boolean>(true);
+    const [paused, setPaused] = useState<boolean>(false);
 
     // Text Lines
-    const textLines:string[] = [
-        "For over four decades, Dosti Realty has been a symbol of trust and excellence in real estate, transforming both locations and lives.",
-        "Driven by a deep understanding of evolving customer needs, we have delivered over 13.60 mn sq. ft. across 140+ properties.",
-        "We have shaped over 23,200 residences into homes where families thrive.",
-        "Guided by our ethos, ‘Friends for Life’, we focus on thoughtful design and timeless architecture.",
-        "We ensure a seamless home-buying experience—from construction updates to post-possession support.",
-        "We build more than just structures; we create spaces that foster belonging and harmony.",
-        "With 21 mn sq. ft. upcoming developments across Mumbai and Pune, we continue our journey of excellence."
+    const textLines: string[] = [
+        "This collection of mini projects showcases practical, real-world applications built using modern frontend technologies.",
+        "Each project is developed with React and TypeScript, focusing on clean architecture, reusability, and type safety.",
+        "Redux Toolkit is used for predictable state management, simulating real production-level workflows.",
+        "Tailwind CSS powers a responsive and scalable design system, ensuring consistency across all screen sizes.",
+        "Glassmorphism UI patterns are applied to create visually appealing, modern interfaces with depth and clarity.",
+        "The projects emphasize performance, maintainability, and user-centric interactions.",
+        "Together, these mini projects reflect a strong foundation in frontend and industry-ready development practices."
     ];
+
 
     const [visibleLines, setVisibleLines] = useState<string[]>([]);
 
     // Line by Line Reveal Effect
-   useEffect(() => {
-    let index = 0;
+    useEffect(() => {
+        let index = 0;
 
-    const interval = setInterval(() => {
-        if (index < textLines.length) {
-            setVisibleLines((prev) => [...prev, textLines[index]]);
-            index++;
+        const interval = setInterval(() => {
+            if (index < textLines.length) {
+                setVisibleLines((prev) => [...prev, textLines[index]]);
+                index++;
 
-            // Auto scroll after every 3 lines
-            if (index % 3 === 0) {
-                window.scrollTo({
-                    top: window.scrollY + 150,
-                    behavior: "smooth",
-                });
+                // Auto scroll after every 3 lines
+                if (index % 3 === 0) {
+                    window.scrollTo({
+                        top: window.scrollY + 150,
+                        behavior: "smooth",
+                    });
+                }
+            } else {
+                clearInterval(interval); // Stop the interval after last line
             }
-        } else {
-            clearInterval(interval); // Stop the interval after last line
-        }
-    }, 1500);
+        }, 1500);
 
-    return () => clearInterval(interval); // Cleanup on unmount
-}, []);
+        return () => clearInterval(interval); // Cleanup on unmount
+    }, []);
 
 
     // Mute / Unmute
@@ -59,31 +62,39 @@ export default function EntrancePage() {
     // };
 
     // Play / Pause
-    // const togglePlay = () => {
-    //     if (!videoRef.current) return;
-    //     if (paused) {
-    //         videoRef.current.play();
-    //     } else {
-    //         videoRef.current.pause();
-    //     }
-    //     setPaused(!paused);
-    // };
+    const togglePlay = () => {
+        if (!videoRef.current) return;
+        if (paused) {
+            videoRef.current.play();
+        } else {
+            videoRef.current.pause();
+        }
+        setPaused(!paused);
+    };
+
+    const handleRestart = () => {
+        if (videoRef.current) {
+            videoRef.current.currentTime = 0;
+            videoRef.current.play();
+        }
+    };
+
 
     return (
         <>
             <div className="relative w-full h-screen overflow-hidden">
                 {/* Background Video */}
-                {/* <video
+                <video
                     ref={videoRef}
-                    src={video}
+                    src={bgvideo}
                     autoPlay
                     muted={muted}
                     loop
                     playsInline
                     className="w-full h-full object-cover"
-                /> */}
+                />
 
-                 <img 
+                {/* <img 
                     // ref={videoRef}
                     src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
                     // autoPlay
@@ -91,7 +102,7 @@ export default function EntrancePage() {
                     // loop
                     // playsInline
                     className="w-full h-full object-cover"
-                />
+                /> */}
 
                 {/* Dark Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/10"></div>
@@ -111,18 +122,18 @@ export default function EntrancePage() {
                         </p>
                     ))}
 
-                    
+
                 </div>
                 <div className="absolute bottom-[15%] w-full left-10 animate-float">
                     {/* Explore Button */}
                     <Link to="/projects">
-                        <button className="mt-6 w-[55%]  md:w-[35%] lg:w-[20%] py-3 bg-white/20 backdrop-blur-xl text-black font-bold rounded-lg border border-white hover:bg-white/30 transition">
+                        <button className="mt-6 w-[55%]  md:w-[35%] lg:w-[20%] py-3 bg-white/20 backdrop-blur-xl text-white font-bold rounded-lg border border-white hover:bg-white/30 transition">
                             Explore Projects→
                         </button>
                     </Link>
                 </div>
 
-                {/* Video Control Buttons 
+                {/* Video Control Buttons */}
                 <div className="absolute bottom-10 right-10 flex gap-4">
 
                     {/* Mute / Unmute 
@@ -131,16 +142,23 @@ export default function EntrancePage() {
                         className="p-3 bg-white/30 animate-float1 backdrop-blur-xl text-white rounded-full border border-white hover:bg-white/40 transition shadow-lg"
                     >
                         {muted ? <HiVolumeOff size={20} /> : <HiVolumeUp size={20} />}
+                    </button>*/}
+                    {/* Restart */}
+                    <button
+                        onClick={handleRestart}
+                        className="p-3 bg-white/30 animate-float1 backdrop-blur-xl text-white rounded-full border border-white hover:bg-white/40 transition shadow-lg"
+                    >
+                        <HiRefresh size={20} />
                     </button>
 
-                    {/* Play / Pause 
+                    {/* Play / Pause */}
                     <button
                         onClick={togglePlay}
                         className="p-3 bg-white/30 animate-float backdrop-blur-xl text-white rounded-full border border-white hover:bg-white/40 transition shadow-lg"
                     >
                         {paused ? <FaPlay size={17} /> : <FaPause size={17} />}
                     </button>
-                </div>  */}
+                </div>
             </div>
 
             {/* Text Animation CSS */}

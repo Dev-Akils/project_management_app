@@ -1,7 +1,7 @@
 
 import { useDispatch} from "react-redux";
 
-import { deleteTodo } from "../todoSlice";
+import { deleteTodo } from "../redux/Features/todoSlice";
 export default function DeleteButton({id}:{id:number}){
 
     

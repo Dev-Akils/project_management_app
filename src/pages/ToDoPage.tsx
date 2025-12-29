@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import type { RootState } from "../store";
-import { toggleTodo } from "../todoSlice";
+import type { RootState } from "../redux/store";
+import { toggleTodo } from "../redux/Features/todoSlice";
 import AddButton from "../components/AddButton";
 import DeleteButton from "../components/DeleteButton";
 import UpdateButton from "../components/UpdateButton";
