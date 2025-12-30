@@ -42,7 +42,7 @@ const projects: Project[] = [
       "Displays temperature, humidity, and weather conditions in a user-friendly layout.",
       "Styled with Tailwind CSS and Glassmorphism UI for a modern visual experience."
     ],
-    link: "/weather",
+    link: "/weather_app",
   },
 
   {
