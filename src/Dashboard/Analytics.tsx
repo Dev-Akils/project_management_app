@@ -1,5 +1,6 @@
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
+import { useNavigate } from "react-router-dom";
 
 const Analytics = () => {
   const monthlySalesOptions = {
@@ -58,10 +59,14 @@ const Analytics = () => {
     { title: "Best Product", value: "iPhone 15" },
     { title: "Top Region", value: "Chennai" },
   ];
-
+  const navigate = useNavigate();
   return (
     <div className="p-6 space-y-6">
-      <h1 className="text-2xl font-semibold">Sales Analytics</h1>
+      <div className="flex justify-between px-5">
+        <h1 className="text-2xl font-semibold">Sales Analytics</h1>
+        <button className="px-4 rounded-lg  text-sm bg-gray-500/70 hover:bg-gray-600/80 text-white py-2" onClick={() => navigate(-1)}>Go Back</button>
+      </div>
+
 
       {/* Stats */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
