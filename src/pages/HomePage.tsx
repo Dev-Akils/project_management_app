@@ -10,6 +10,61 @@ interface Project {
 }
 
 const projects: Project[] = [
+
+  {
+    title: "E-Commerce Product Manager",
+    description: [
+      "Interactive e-commerce product management app built with React and Redux.",
+      "Users can browse products and add items to a dynamic shopping cart.",
+      "Centralized Redux state ensures predictable cart and product updates.",
+      "Real-time UI updates provide a smooth shopping experience.",
+      "Reusable components designed for scalable front-end architecture.",
+      "Responsive layout styled using modern UI practices.",
+      "GitHub source: github.com/Dev-Akils/ProductManage_inReactRedux"
+    ],
+    gapLink: "https://product-manage-in-react-redux.vercel.app/",
+  },
+
+  {
+    title: "Pokémon Explorer",
+    description: [
+      "Interactive Pokémon browsing app powered by the [PokeAPI](https://pokeapi.co/api/v2/pokemon/1/) for real-time data.",
+      "Built with React(TSX)+Tailwind CSS.",
+      "Uses React Query for efficient data fetching, caching, and state management.",
+      "Infinite scrolling lets users browse Pokémon endlessly, loading new data automatically as they scroll.",
+      "Detailed Pokémon cards display images, types, and base stats like HP, Attack, and Defense.",
+      "Users can add or remove Pokémon from their collection, with data saved in localStorage for persistence.",
+      "Github:https://github.com/Dev-Akils/pokemon_collection_app"
+    ],
+    gapLink: "https://pokemon-collection-app-sxxc.vercel.app",
+  },
+
+  {
+    title: "Dashboard",
+    description: [
+      "Interactive dashboard developed using React, Redux Toolkit, and TypeScript.",
+      "Displays analytics, charts, and summary cards with centralized state management.",
+      "Implements reusable components for scalable and maintainable UI design.",
+      "Designed with Tailwind CSS and Glassmorphism principles for a modern dashboard experience."
+    ],
+    link: "/dashboard",
+  },
+
+  {
+    title: "Task Management Calendar",
+    description: [
+      "Interactive task management calendar built using React (TSX) and Tailwind CSS.",
+      "Users can add, update, and delete tasks directly inside calendar dates.",
+      "Visual calendar layout makes task planning intuitive and organized.",
+      "Task notes can be attached to specific days for better tracking.",
+      "Real-time UI updates provide a smooth task management experience.",
+      "Responsive design ensures usability across desktop and mobile devices.",
+      "Optimized component structure for scalable front-end architecture.",
+      "Github:https://github.com/Dev-Akils/task_management_using_ts"
+
+    ],
+    gapLink: "https://task-management-using-ts-akqc.vercel.app",
+  },
   {
     title: "Todo App",
     description: [
@@ -26,6 +81,22 @@ const projects: Project[] = [
 
     link: "/todo",
   },
+
+  {
+    title: "Embassy Clone—Navigation(31–38)",
+    description: [
+      "Interactive architect floor explorer built with React and Tailwind CSS.",
+      "Polygon-based room and space highlighting for precise visual mapping.",
+      "Dynamic tooltips display room details on hover.",
+      "Smooth navigation between architectural sections.",
+      "Responsive layout optimized for large screens and tablets.",
+      "Reusable React components for scalable UI structure.",
+      "GitHub source: github.com/Dev-Akils/embassy-clone1"
+    ],
+    gapLink: "https://embassy-clone1-ijnq.vercel.app/",
+  },
+
+
   {
     title: "Stopwatch",
     description: [
@@ -47,45 +118,8 @@ const projects: Project[] = [
     link: "/weather_app",
   },
 
-  {
-    title: "Dashboard",
-    description: [
-      "Interactive dashboard developed using React, Redux Toolkit, and TypeScript.",
-      "Displays analytics, charts, and summary cards with centralized state management.",
-      "Implements reusable components for scalable and maintainable UI design.",
-      "Designed with Tailwind CSS and Glassmorphism principles for a modern dashboard experience."
-    ],
-    link: "/dashboard",
-  },
-  {
-    title: "Pokémon Explorer",
-    description: [
-      "Interactive Pokémon browsing app powered by the [PokeAPI](https://pokeapi.co/api/v2/pokemon/1/) for real-time data.",
-      "Built with React(TSX)+Tailwind CSS.",
-      "Uses React Query for efficient data fetching, caching, and state management.",
-      "Infinite scrolling lets users browse Pokémon endlessly, loading new data automatically as they scroll.",
-      "Detailed Pokémon cards display images, types, and base stats like HP, Attack, and Defense.",
-      "Users can add or remove Pokémon from their collection, with data saved in localStorage for persistence.",
-      "Github:https://github.com/Dev-Akils/pokemon_collection_app"
-    ],
-    gapLink: "https://pokemon-collection-app-sxxc.vercel.app",
-  },
+  
 
-  {
-    title: "Task Management Calendar",
-    description: [
-      "Interactive task management calendar built using React (TSX) and Tailwind CSS.",
-      "Users can add, update, and delete tasks directly inside calendar dates.",
-      "Visual calendar layout makes task planning intuitive and organized.",
-      "Task notes can be attached to specific days for better tracking.",
-      "Real-time UI updates provide a smooth task management experience.",
-      "Responsive design ensures usability across desktop and mobile devices.",
-      "Optimized component structure for scalable front-end architecture.",
-      "Github:https://github.com/Dev-Akils/task_management_using_ts"
-
-    ],
-    gapLink: "https://task-management-using-ts-akqc.vercel.app",
-  },
 
   {
     title: "UI",
@@ -100,33 +134,7 @@ const projects: Project[] = [
     ],
     gapLink: "https://gems-school-homepage-ui-vtnu.vercel.app/",
   },
- {
-  title: "Embassy Clone—Navigation(31–38)",
-  description: [
-    "Interactive architect floor explorer built with React and Tailwind CSS.",
-    "Polygon-based room and space highlighting for precise visual mapping.",
-    "Dynamic tooltips display room details on hover.",
-    "Smooth navigation between architectural sections.",
-    "Responsive layout optimized for large screens and tablets.",
-    "Reusable React components for scalable UI structure.",
-    "GitHub source: github.com/Dev-Akils/embassy-clone1"
-  ],
-  gapLink: "https://embassy-clone1-ijnq.vercel.app/",
-},
 
-{
-  title: "E-Commerce Product Manager",
-  description: [
-    "Interactive e-commerce product management app built with React and Redux.",
-    "Users can browse products and add items to a dynamic shopping cart.",
-    "Centralized Redux state ensures predictable cart and product updates.",
-    "Real-time UI updates provide a smooth shopping experience.",
-    "Reusable components designed for scalable front-end architecture.",
-    "Responsive layout styled using modern UI practices.",
-    "GitHub source: github.com/Dev-Akils/ProductManage_inReactRedux"
-  ],
-  gapLink: "https://product-manage-in-react-redux.vercel.app/",
-}
 
 
 
