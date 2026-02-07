@@ -3,7 +3,9 @@ import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [username, setUsername] = useState("");
+
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
@@ -28,7 +30,15 @@ const Login = () => {
       setError("Invalid Username or Password");
     }
   };
+  const handleGoBack = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
 
+    console.log("Back button clicked"); // Check your console!
+
+    // Try a direct path instead of -1 just to verify it works
+    navigate("/", { replace: true });
+  };
   return (
     <div className="h-screen flex justify-center items-center bg-gray-100">
       <form
@@ -47,20 +57,39 @@ const Login = () => {
           onChange={(e) => setUsername(e.target.value)}
         />
 
-        <input
-          type="password"
-          placeholder="Password-123456"
-          className="w-full border p-2 rounded mb-4"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-
-        <button
-          type="submit"
-          className="w-full bg-gray-700 text-white py-2 rounded hover:bg-gray-800"
-        >
-          Login
-        </button>
+        {/* 2. Wrapped Password Input */}
+        <div className="relative w-full mb-4">
+          <input
+            type={showPassword ? "text" : "password"} // 3. Dynamic type
+            placeholder="Password-123456"
+            className="w-full border p-2 rounded outline-none focus:ring-1 focus:ring-gray-400"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button
+            type="button"
+            onClick={() => setShowPassword(!showPassword)}
+            className="absolute right-3 top-2.5 text-gray-500 hover:text-gray-700 text-sm"
+          >
+            {showPassword ? "🙈" : "👁️"}
+          </button>
+        </div>
+        <div className="flex gap-2 text-[14px]">
+          <button
+            type="submit"
+            className="w-full  bg-gray-700 text-white py-2
+           rounded hover:bg-gray-800 "
+          >
+            Login
+          </button>
+          <button
+            onClick={handleGoBack}
+            type="button"
+            className="w-full bg-gray-700 text-white py-2 rounded hover:bg-gray-800"
+          >
+            Go Back
+          </button>
+        </div>
       </form>
     </div>
   );
