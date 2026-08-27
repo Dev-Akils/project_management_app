@@ -1,73 +1,135 @@
-# React + TypeScript + Vite
+# Project Management App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern project management dashboard built with React, TypeScript, and Vite — featuring a glassmorphism UI, Redux-powered state management, and a clean, responsive layout for tracking projects and tasks.
 
-Currently, two official plugins are available:
+**🔗 Live Demo:** [project-management-app-3web.vercel.app](https://project-management-app-3web.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 📊 **Dashboard** — at-a-glance overview of projects and tasks
+- 🗂️ **Project & task views** across multiple pages
+- 🎨 **Glassmorphism UI** — frosted-glass cards, soft shadows, and blur effects for a modern look
+- 🔄 **Redux state management** for predictable, centralized app state
+- ⚡ **Vite** for near-instant dev server startup and fast HMR
+- 🎬 Demo video included in `src/video`
+- 📱 Responsive design
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+<img width="1568" height="747" alt="image" src="https://github.com/user-attachments/assets/18d9560a-bb5c-4fd4-bf6c-bc5ae3930d22" />
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+> Update this list with the specific features your app actually supports (e.g. drag-and-drop task boards, filters, auth, charts, etc.) — this is a starting draft based on the folder structure.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🛠️ Tech Stack
+
+| Category | Tech |
+|---|---|
+| Framework | React 18 + TypeScript |
+| Build tool | Vite |
+| State management | Redux (Redux Toolkit) |
+| Styling | Tailwind CSS |
+| Linting | ESLint |
+| Deployment | Vercel |
+
+---
+
+## 📁 Project Structure
+
+```
+project_management_app/
+├── public/                # Static assets
+├── src/
+│   ├── assets/             # Images, icons, etc.
+│   ├── components/         # Reusable UI components
+│   ├── Dashboard/           # Dashboard views/widgets
+│   ├── pages/               # Route-level pages
+│   ├── redux/                # Store, slices, actions
+│   ├── video/                 # Demo/walkthrough video
+│   ├── App.tsx
+│   ├── App.css
+│   ├── main.tsx
+│   └── index.css
+├── eslint.config.js
+├── tailwind.config.js
+├── postcss.config.js
+├── vite.config.ts
+├── tsconfig.json / tsconfig.app.json / tsconfig.node.json
+└── package.json
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🚀 Getting Started
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Prerequisites
+
+- Node.js 18+
+- npm (or yarn/pnpm)
+
+### Installation
+
+```bash
+git clone https://github.com/Dev-Akils/project_management_app
+cd project_management_app
+npm install
 ```
+
+### Run locally
+
+```bash
+npm run dev
+```
+
+The app will be available at `http://localhost:5173`.
+
+### Build for production
+
+```bash
+npm run build
+```
+
+### Preview the production build
+
+```bash
+npm run preview
+```
+
+### Lint
+
+```bash
+npm run lint
+```
+
+
+
+---
+
+## 🎨 Design
+
+The UI follows a **glassmorphism** aesthetic — translucent, blurred-background cards layered over a soft gradient background — implemented with Tailwind CSS utility classes (backdrop blur, transparency, subtle borders/shadows).
+
+---
+
+## 🗺️ Roadmap / Ideas for Extension
+
+- [ ] Authentication (per-user project boards)
+- [ ] Drag-and-drop task board (Kanban view)
+- [ ] Persist data via a backend/API instead of local state
+- [ ] Dark/light theme toggle
+- [ ] Task filtering, search, and sorting
+- [ ] Unit/integration tests
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 🙋 Author
+
+Built by **Akila S** — part of a collection of mini frontend projects. Check out more at the [https://akils-dev.vercel.app/]
